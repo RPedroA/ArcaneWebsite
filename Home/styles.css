@@ -1,0 +1,273 @@
+@font-face {
+    font-family: "beaufort";
+    src: url("./assets/fonts/BeaufortforLOL-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: "spiegel";
+    src: url("./assets/fonts/Spiegel-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+    font-family: "spiegel", sans-serif;
+}
+
+header .nav {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+    font-family: 'beaufort', serif;
+}
+
+header .nav-link {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    padding: 10px 15px;
+    font-family: 'beaufort', serif;
+}
+
+header .nav-link:hover {
+    color: #c38e3f;
+    transform: scale(1.1);
+}
+
+header .nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.hero {
+    background: url('img/background.png') no-repeat center center/cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.shift-right {
+    margin-left: 50px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+}
+
+.arcane-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    margin-left: 20px;
+}
+
+.hero-text .lead {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .4);
+    letter-spacing: -.03em;
+    color: rgba(249, 249, 249, .6);
+    font-family: 'beaufort', serif;
+}
+
+.hero-text .subtext {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 3.125rem;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .4);
+    letter-spacing: -.03em;
+    color: rgba(249, 249, 249, .6);
+    font-family: "spiegel", sans-serif;
+}
+
+.hero .buttons {
+    margin: 10px;
+}
+
+.hero .champions-right {
+    position: absolute;
+    right: 200px;
+    bottom: 250px;
+    text-align: center;
+}
+
+.hero .champions-overlay {
+    position: relative;
+}
+
+.hero .champions-image {
+    width: 800px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    filter: brightness(70%);
+}
+
+.hero .new-champions-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c38e3f;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.hero .new-champions-btn:hover {
+    background-color: #b07b36;
+}
+
+.hero .btn-primary, .hero .btn-warning {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.hero .btn-primary {
+    background-color: #c38e3f;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero .btn-primary:hover {
+    background-color: #b07b36;
+}
+
+.hero .btn-warning {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.footer {
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #c38e3f;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+    margin: 35px 0 0 20px;
+    display: block;
+}
+
+.footer h5 {
+    color: #c38e3f;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.footer ul li {
+    margin-bottom: 5px;
+}
+
+.footer ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #c38e3f;
+}
+
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.footer .col-md-2, .footer .col-md-3 {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer .col-md-3 {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow {
+    border-bottom-color: #ffc107;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-inner {
+    background-color: #ffc107;
+    color: #000;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

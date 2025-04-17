@@ -1,0 +1,401 @@
+/* Custom Fonts */
+@font-face {
+    font-family: "beaufort";
+    src: url("./assets/fonts/BeaufortforLOL-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: "spiegel";
+    src: url("./assets/fonts/Spiegel-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Evita overflow horizontal */
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+
+/* Headlines */
+.display {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.heading-1 {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.heading-2 {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.heading-3-uppercase {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.heading-3 {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Paragraphs */
+.paragraph-1 {
+    font-family: 'spiegel', serif;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.paragraph-2 {
+    font-family: 'spiegel', serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* Buttons and Links */
+.button {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.link {
+    font-family: 'beaufort', serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user-icon {
+    font-size: 1.5rem;
+}
+
+.background-wrapper {
+    background-image: url('img/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 50px;
+    position: relative;
+}
+
+.full-width-rectangle {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #1b1b1d;
+    border-top: 1px solid #C38E3F;
+    border-bottom: 1px solid #C38E3F;
+    padding: 10px 0;
+    z-index: 1;
+}
+
+.main-text {
+    color: #C38E3F;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-family: 'beaufort', sans-serif;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.rectangle {
+    height: 2px;
+    background-color: #C38E3F;
+    margin: 0 auto 20px;
+    width: 60%;
+}
+
+.character-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding: 0 10px;
+    margin-top: 150px;
+    transition: transform 0.5s ease;
+}
+
+.character-item {
+    text-align: center;
+    margin: 0 30px;
+    max-width: 230px;
+    flex: 0 0 auto;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.character-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.character-item .image {
+    position: relative;
+    width: 230px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0;
+    border: 1px solid #C38E3F;
+}
+
+.character-item .image .text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #C38E3F;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #C38E3F;
+    padding: 10px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: -1px;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-arrow {
+    background-color: #1b1b1d;
+    border: none;
+    color: #C38E3F;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.left-arrow {
+    left: 0;
+    margin-left: -80px;
+    margin-top: 60px;
+}
+
+.right-arrow {
+    right: 0;
+    margin-right: -80px;
+    margin-top: 60px;
+}
+
+.carousel-arrow:hover {
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+header {
+    background-color: #1a1a1a; /* Fundo preto para o header */
+    font-family: 'beaufort', serif;
+}
+
+header .nav {
+    width: 100%; /* Garante que a nav ocupe toda a largura */
+    justify-content: center;
+    padding: 7px 0;
+}
+
+header .nav-link {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    padding: 10px 15px;
+}
+
+header .nav-link:hover {
+    color: #c38e3f;
+    transform: scale(1.1);
+}
+
+.logo {
+    color: #C38E3F;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main-content .main-text {
+    position: relative;
+}
+
+.main-content .main-text:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #C38E3F;
+    margin: 10px auto 0;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .character-container {
+        flex-wrap: wrap;
+    }
+    .character-item {
+        margin: 15px;
+        max-width: 200px;
+    }
+    .character-item .image {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .character-container {
+        flex-direction: column;
+    }
+    .carousel-arrow {
+        font-size: 1.5rem;
+    }
+    .left-arrow, .right-arrow {
+        margin: 0;
+    }
+    .full-width-rectangle {
+        top: 30px;
+    }
+    .main-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .character-item {
+        margin: 10px;
+        max-width: 180px;
+    }
+    .character-item .image {
+        width: 180px;
+        height: 270px;
+    }
+    .carousel-arrow {
+        display: none;
+    }
+}
+
+.footer {
+    background-color: #111;
+    /* Preto para o fundo do rodapé */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #c38e3f;
+    /* Linha dourada no topo do rodapé */
+    width: 100%;
+    /* Ensure footer spans the full width */
+    flex-shrink: 0;
+    /* Prevent the footer from shrinking */
+  }
+  
+  .footer img {
+    max-width: 150px;
+    /* Definir um tamanho máximo para a imagem */
+    height: auto;
+    margin: 35px 0 0 20px;
+    /* Adjusted margin to move the logo slightly up */
+    display: block;
+  }
+  
+  .footer h5 {
+    color: #c38e3f;
+    /* Dourado para os títulos do rodapé */
+    margin-bottom: 10px;
+    /* Reduce margin-bottom for titles */
+    text-align: left;
+    /* Alinhamento à esquerda para os títulos */
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Remove default margin */
+    text-align: left;
+    /* Alinhamento à esquerda para as listas */
+  }
+  
+  .footer ul li {
+    margin-bottom: 5px;
+    /* Reduce margin-bottom for list items */
+  }
+  
+  .footer ul li a {
+    color: #f1f1f1;
+    /* Branco para os links do rodapé */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer ul li a:hover {
+    color: #c38e3f;
+    /* Dourado para hover nos links do rodapé */
+  }
+  
+  .row.align-items-center {
+    align-items: center;
+    /* Alinhamento vertical central para todos os itens da linha */
+  }
+  
+  .footer .row {
+    display: flex;
+    justify-content: space-between;
+    /* Space between for links and logo */
+    align-items: center;
+    /* Center the content vertically */
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    /* Add padding to the left and right */
+  }
+  
+  .footer .col-md-2 {
+    text-align: left;
+    /* Left-align the text */
+  }
+  
+  .footer .col-md-2:last-child {
+    text-align: right;
+    /* Right-align the last column (logo) */
+  }
+  
+  
+  .footer .col-md-3 {
+    margin: 0 -250px;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Para navegadores Webkit (Chrome, Safari) */
+  }

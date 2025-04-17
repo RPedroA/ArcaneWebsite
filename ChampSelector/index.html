@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <nav class="nav">
+                <a href="../Home/index.html" class="nav-link">Home</a>
+                <a href="../ChampSelector/index.html" class="nav-link">Champions</a>
+                <a href="../About Us/index.html" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+    <div class="background-wrapper">
+        <div class="full-width-rectangle">
+            <div class="container text-center">
+                <div class="main-text">Pick a Champion</div>
+            </div>
+        </div>
+        <main class="container my-5">
+            <section class="rectangle mb-4"></section>
+            <div class="carousel-container">
+                <button class="carousel-arrow left-arrow" onclick="prevCharacters()">❮</button>
+                <section class="character-container">
+                    <!-- Characters will be dynamically inserted here -->
+                </section>
+                <button class="carousel-arrow right-arrow" onclick="nextCharacters()">❯</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let currentSet = 0;
+        const characters = [
+            [
+                {name: 'Jinx', place: 'Zaun', img: 'img/JinxPortrait.jpg', link: '../css grid/jinx.html'},
+                {name: 'Vi', place: 'Piltover', img: 'img/ViPortrait.jpg', link: '../css grid/Vi.html'},
+                {name: 'Caitlyn', place: 'Piltover', img: 'img/CaitlynPortrait.jpg', link: '../css grid/Caitlyn.html'},
+                {name: 'Jayce', place: 'Piltover', img: 'img/JaycePortrait.jpg', link: '../css grid/Jayce.html'}
+            ],
+            [
+                {name: 'Ekko', place: 'Zaun', img: 'img/EkkoPortrait.jpg', link: '../css grid/Ekko.html'},
+                {name: 'Singed', place: 'Zaun', img: 'img/SingedPortrait.jpg', link: '../css grid/Singed.html'},
+                {name: 'Viktor', place: 'Zaun', img: 'img/ViktorPortrait.jpg', link: '../css grid/Viktor.html'},
+                {name: 'Heimerdinger', place: 'Zaun', img: 'img/HeimerdingerPortrait.jpg', link: '../css grid/heimerdinger.html'}
+            ]
+            // Add more sets as needed
+        ];
+
+        function showCharacters() {
+            const container = document.querySelector('.character-container');
+            container.innerHTML = '';
+            characters[currentSet].forEach(character => {
+                const item = document.createElement('div');
+                item.classList.add('character-item', 'active');
+                item.innerHTML = `
+                    <a href="${character.link}">
+                        <div class="image" style="background-image: url('${character.img}');">
+                            <div class="text">${character.name}<br>${character.place}</div>
+                        </div>
+                    </a>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function nextCharacters() {
+            currentSet = (currentSet + 1) % characters.length;
+            document.querySelectorAll('.character-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            setTimeout(() => {
+                showCharacters();
+            }, 500); // Match the transition duration
+        }
+
+        function prevCharacters() {
+            currentSet = (currentSet - 1 + characters.length) % characters.length;
+            document.querySelectorAll('.character-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            setTimeout(() => {
+                showCharacters();
+            }, 500); // Match the transition duration
+        }
+
+        document.addEventListener('DOMContentLoaded', showCharacters);
+    </script>
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3 d-flex align-items-center">
+                <img src="../About Us/img/ipvc.png" alt="IPVC logo" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-3">
+                <h5>IPVC</h5>
+                <ul>
+                    <li><a href="https://www.ipvc.pt/" target="_blank">Site</a></li>
+                    <li><a href="https://www.instagram.com/ipvc/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@IPVCTV" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Riot</h5>
+                <ul>
+                    <li><a href="https://www.riotgames.com/en" target="_blank">Site</a></li>
+                    <li><a href="https://www.instagram.com/riotgames/?hl=en" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/riotgames" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Netflix</h5>
+                <ul>
+                    <li><a href="https://www.netflix.com/pt-en/" target="_blank">Site</a></li>
+                    <li><a href="https://www.instagram.com/netflix/?hl=en" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@Netflix" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Criadores</h5>
+                <ul>
+                    <li>Rui Araújo</li>
+                    <li>Hugo Antunes</li>
+                    <li>Zein de Macedo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
